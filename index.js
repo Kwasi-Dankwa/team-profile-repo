@@ -1,9 +1,20 @@
+//Adding packages annd template
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateTeam = require("./src/template.js");
 
-//generate html page to create employee cards and loop through array
-function generateHTML() {
-    const htmlpage = [];
-    const htmlpagehead = ``
-}
+//Adding the lib modules
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+
+//Adding prompts
+const questions = async () => {
+    const answers = await inquirer
+      .prompt([
+        {
+          type: "input",
+          message: "What is your name?",
+          name: "name",
+        },])
 
