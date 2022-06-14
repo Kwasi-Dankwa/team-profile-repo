@@ -53,7 +53,7 @@ const questions = async () => {
               answers.email,
               managerAns.officeNumber
             );
-            newStaffMemberData.push(newManager);
+            newMemberData.push(newManager);
             
           // if engineer selected answer these set of questions
         } else if (answers.role === "Engineer") {
@@ -71,7 +71,7 @@ const questions = async () => {
                 answers.email,
                 githubAns.github
               );
-              newStaffMemberData.push(newEngineer);
+              newMemberData.push(newEngineer);
             
           // if intern selected answer these set of questions
         } else if (answers.role === "Intern") {
@@ -79,7 +79,7 @@ const questions = async () => {
             .prompt([
               {
                 type: "input",
-                message: "What university did you attend?",
+                message: "What university do you currently attend?",
                 name: "school",
               },
             ])
@@ -90,7 +90,7 @@ const questions = async () => {
               answers.email,
               internAns.school
             );
-            newStaffMemberData.push(newIntern);          
+            newMemberData.push(newIntern);          
         } 
   
   }; //end of questions function
@@ -118,10 +118,10 @@ const questions = async () => {
   promptQuestions();
   
   function createTeam () {
-    console.log("new guy", newStaffMemberData)
+    console.log("new guy", newMemberData)
     fs.writeFileSync(
       "./output/index.html",
-      generateTeam(newStaffMemberData),
+      generateTeam(newMemberData),
       "utf-8"
     );
   }
