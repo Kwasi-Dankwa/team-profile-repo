@@ -8,6 +8,9 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
+//Creating variable to define NewMemeber data array to store inputs
+newMemberData = []
+
 //Creatig prompts for CLI
 const questions = async () => {
     const answers = await inquirer
