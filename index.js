@@ -120,7 +120,8 @@ const questions = async () => {
   function createTeam () {
     console.log("new guy", newMemberData)
     fs.writeFileSync(
-      "./output/index.html",
+      //dist folder to hold index.html
+      "./dist/index.html",
       generateTeam(newMemberData),
       "utf-8"
     );
